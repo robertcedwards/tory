@@ -14,7 +14,7 @@ var app = new Vue({
             var self = this
             var app_id = "appCsH7ytW2fUJCOU";
             var app_key = "keyLBt6WtuDTOaZ72";
-            var table_name = "Inventory"
+            var table_name = "Inventory";
             this.items = []
             axios.get(
                 "https://api.airtable.com/v0/"+app_id+"/"+table_name+"?view=Grid%20view",
