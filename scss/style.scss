@@ -12,23 +12,15 @@ header {
 }
 main {
   @include grid-row;
-  article {
-    @include grid-column(6);
-    p{}
-  }
-  span{
-    @include grid-column(4);
-    @include card-container(lightgrey, grey, 10px, 5px, 5px, 3px 3px);
-    img{
-      padding: .5em;
-    }
-    #paypal-button-container{
-      margin: 0 auto;
-      padding: .5em;
-    }
-  }
-  article.trello{
+  #app {
     @include grid-column(12);
+    h1{}
+    ul{
+      li{
+        @include grid-column(2);
+        @include card-container;
+      }
+    }
   }
   footer{
     @include grid-column(12);

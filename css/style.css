@@ -41,65 +41,46 @@ main {
     order: 1; }
   main::after {
     clear: both; }
-  main article {
-    width: 50%;
-    float: left;
-    padding-right: 0.625rem;
-    padding-left: 0.625rem; }
-    @media print, screen and (min-width: 40em) {
-      main article {
-        padding-right: 0.9375rem;
-        padding-left: 0.9375rem; } }
-    main article, main article:last-child:not(:first-child) {
-      float: left;
-      clear: none; }
-    main article:last-child:not(:first-child) {
-      float: right; }
-  main span {
-    width: 33.3333333333%;
-    float: left;
-    padding-right: 0.625rem;
-    padding-left: 0.625rem;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    margin-bottom: 10px;
-    border: 5px;
-    border-radius: 5px;
-    background: lightgrey;
-    box-shadow: 3px 3px;
-    overflow: hidden;
-    color: grey; }
-    @media print, screen and (min-width: 40em) {
-      main span {
-        padding-right: 0.9375rem;
-        padding-left: 0.9375rem; } }
-    main span, main span:last-child:not(:first-child) {
-      float: left;
-      clear: none; }
-    main span:last-child:not(:first-child) {
-      float: right; }
-    main span > :last-child {
-      margin-bottom: 0; }
-    main span img {
-      padding: .5em; }
-    main span #paypal-button-container {
-      margin: 0 auto;
-      padding: .5em; }
-  main article.trello {
+  main #app {
     width: 100%;
     float: left;
     padding-right: 0.625rem;
     padding-left: 0.625rem; }
     @media print, screen and (min-width: 40em) {
-      main article.trello {
+      main #app {
         padding-right: 0.9375rem;
         padding-left: 0.9375rem; } }
-    main article.trello, main article.trello:last-child:not(:first-child) {
+    main #app, main #app:last-child:not(:first-child) {
       float: left;
       clear: none; }
-    main article.trello:last-child:not(:first-child) {
+    main #app:last-child:not(:first-child) {
       float: right; }
+    main #app ul li {
+      width: 16.6666666667%;
+      float: left;
+      padding-right: 0.625rem;
+      padding-left: 0.625rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      border: 1px solid #e6e6e6;
+      border-radius: 0;
+      background: #fefefe;
+      box-shadow: none;
+      overflow: hidden;
+      color: #0a0a0a; }
+      @media print, screen and (min-width: 40em) {
+        main #app ul li {
+          padding-right: 0.9375rem;
+          padding-left: 0.9375rem; } }
+      main #app ul li, main #app ul li:last-child:not(:first-child) {
+        float: left;
+        clear: none; }
+      main #app ul li:last-child:not(:first-child) {
+        float: right; }
+      main #app ul li > :last-child {
+        margin-bottom: 0; }
   main footer {
     width: 100%;
     float: left;
