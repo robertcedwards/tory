@@ -5,7 +5,6 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vinyl Wraps and Filters for Wifi Cameras</title>
-    <link rel="stylesheet" href="https://trello.com/css/static.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -21,59 +20,34 @@
 </header>
 <main>
   <div id="app">
-              <h1>Menu Items</h1>
+              <h3>Inventory</h3>
               <ul>
                   <li v-for="item in items">
-                      <h3>{{ item['fields']['Item'] }}</h3>
+                    <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150">
+                      <h3>{{ item['fields']['Name'] }}</h3>
                       <p>{{ item['fields']['Description'] }}</p>
+                      <p><strong>Name: </strong>${{ item['fields']['Name'] }}</p>
+                      <p><strong>Notes: </strong>${{ item['fields']['Notes'] }}</p>
+                      <p><strong>Location: </strong>${{ item['fields']['Location'] }}</p>
+                      <p><strong>Purchase Link: </strong>${{ item['fields']['Purchase Link'] }}</p>
+                      <p><strong>Bin ID: </strong>${{ item['fields']['Bin ID'] }}</p>
+                      <p><strong>Items: </strong>${{ item['fields']['Item'] }}</p>
+                      <!--<p><strong>Photo : </strong>${{ item['fields']['Photo'] }}</p> -->
+                      <p><strong>Description: </strong>${{ item['fields']['Description'] }}</p>
+                      <p><strong>UPC: </strong>${{ item['fields']['UPC'] }}</p>
+                      <p><strong>Serial: </strong>${{ item['fields']['Serial #'] }}</p>
                       <p><strong>Price: </strong>${{ item['fields']['Price'] }}</p>
                       <p><strong>Category: </strong>{{ item['fields']['Category'] }}</p>
-                      <img :src="item['fields']['Photo'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['Photo']" width="150">
                   </li>
               </ul>
-          </div><!--app-->
-
-          <!-- Include Dependancy Scripts -->
-          <script type="text/javascript" src="https://unpkg.com/vue"></script>
-          <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
-  <script type="text/javascript">
-              var app = new Vue({
-                  el: '#app',
-                  data: {
-                      items: []
-                  },
-                  mounted: function(){
-                     this.loadItems();
-                  },
-                  methods: {
-                      loadItems: function(){
-
-                          // Init variables
-                          var self = this
-                          var app_id = "appCsH7ytW2fUJCOU";
-                          var app_key = "keyLBt6WtuDTOaZ72";
-                          this.items = []
-  axios.get(
-                              "https://api.airtable.com/v0/"+app_id+"/Menu?view=Grid%20view",
-                              {
-                                  headers: { Authorization: "Bearer "+app_key }
-                              }
-                          ).then(function(response){
-                              self.items = response.data.records
-                          }).catch(function(error){
-                              console.log(error)
-                          })
-                      }
-                  }
-              })
-          </script>
-
+          </div>
 </main>
 <footer><h4>Copyright 2019 - Think Make Repeat<h4></footer>
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/what-input/dist/what-input.js"></script>
     <script src="node_modules/foundation-sites/dist/js/foundation.js"></script>
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/vue"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
     <script src="js/min/app-min.js"></script>
   </body>
 </html>
